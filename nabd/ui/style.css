@@ -221,7 +221,7 @@ main { padding: 4px 26px 22px; }
 
 .hero-ledger { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .ledger-k { margin: 0; font-size: 14px; color: rgba(242, 243, 239, 0.72); }
-.ledger-k [lang="ar"] { font-weight: 700; color: #e9c87a; margin-right: 6px; }
+.ledger-k .mizan-k { font-weight: 700; color: #e9c87a; margin-right: 6px; }
 .ledger { list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 8px; flex: 1; }
 .ledger li.learned { border-style: dashed; }
 .ledger li.learned .lk { color: #e9c87a; }
@@ -493,7 +493,6 @@ main { padding: 4px 26px 22px; }
 }
 .fault:hover { border-color: var(--text); background: var(--surface); }
 .fault .ft { font-weight: 500; font-size: 13.5px; line-height: 1.3; }
-.fault .fa { font-size: 12.5px; color: var(--faint); direction: rtl; text-align: right; }
 .fsec.silent .fault { background: var(--mizan-soft); border-color: #ead9b0; }
 .fsec.silent .fault:hover { border-color: var(--mizan); }
 .fsec.silent .fault .ft { font-size: 14px; }

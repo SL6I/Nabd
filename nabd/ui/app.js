@@ -233,27 +233,27 @@ function renderTags() {
 /* ================================================================ chaos panel */
 
 function buildChaos() {
-  const button = (id, f, arabic) => h("button", { class: `fault${f.held_out ? " held" : ""}${f.silent ? " silent" : ""}`, "data-fault": id,
-    title: `${f.title_ar}\n${f.blurb}`, onclick: () => injectFault(id) },
-    h("span", { class: "ft", text: f.title }), arabic ? h("span", { class: "fa", lang: "ar", text: f.title_ar }) : null);
+  const button = (id, f) => h("button", { class: `fault${f.held_out ? " held" : ""}${f.silent ? " silent" : ""}`, "data-fault": id,
+    title: f.blurb, onclick: () => injectFault(id) },
+    h("span", { class: "ft", text: f.title }));
   const entries = Object.entries(S.faults);
   const silent = entries.filter(([, f]) => f.silent);
   const loud = entries.filter(([, f]) => !f.silent && !f.held_out && !f.benign && !f.blind);
   const benign = entries.filter(([, f]) => f.benign);
   const held = entries.filter(([, f]) => f.held_out);
   const blind = entries.filter(([, f]) => f.blind);
-  const section = (cls, title, hint, items, arabic) => h("div", { class: `fsec ${cls}` },
+  const section = (cls, title, hint, items) => h("div", { class: `fsec ${cls}` },
     h("div", { class: "fsec-head" }, h("b", { text: title }), h("span", { text: hint })),
-    h("div", { class: "fsec-grid" }, items.map(([id, f]) => button(id, f, arabic))));
+    h("div", { class: "fsec-grid" }, items.map(([id, f]) => button(id, f))));
   $("#fault-grid").replaceChildren(
-    silent.length ? section("silent", "Silent failures", "No alert will fire. Only Mizan sees these.", silent, true) : null,
-    section("loud", "Loud failures", "Alerts fire; Nabd finds the real cause.", loud, false),
-    benign.length ? section("benign", "Not a fault", "Load alone must not wake Nabd up: the right outcome is nothing.", benign, true) : null);
+    silent.length ? section("silent", "Silent failures", "No alert will fire. Only Mizan sees these.", silent) : null,
+    section("loud", "Loud failures", "Alerts fire; Nabd finds the real cause.", loud),
+    benign.length ? section("benign", "Not a fault", "Load alone must not wake Nabd up: the right outcome is nothing.", benign) : null);
   $("#held-grid").replaceChildren(
-    blind.length ? section("held", "Blind faults", "Written by a teammate in a file we never opened.", blind, false) : null,
+    blind.length ? section("held", "Blind faults", "Written by a teammate in a file we never opened.", blind) : null,
     held.length ? section("held", "Held-out faults",
       S.settings.claude_available ? `No signature exists, so these go to ${llm()}.`
-        : "No signature and no API key: Nabd should escalate, not guess.", held, false) : null);
+        : "No signature and no API key: Nabd should escalate, not guess.", held) : null);
   const sel = $("#scenario-select");
   sel.replaceChildren(...Object.entries(S.scenarios).map(([id, sc]) =>
     h("option", { value: id, text: `${sc.title} (${sc.faults.length} faults)` })));
