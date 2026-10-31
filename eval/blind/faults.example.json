@@ -1,0 +1,17 @@
+{
+  "faults": [
+    {
+      "note": "Format example only. This file is never run; Nabd reads faults.json.",
+      "inject": [
+        {"type": "toxic", "proxy": "orders_db_primary",
+         "toxic": {"name": "example_latency", "type": "latency", "stream": "downstream", "toxicity": 1.0,
+                   "attributes": {"latency": 400, "jitter": 50}}}
+      ],
+      "undo": [
+        {"type": "http", "method": "DELETE", "url": "http://toxiproxy:8474/proxies/orders_db_primary/toxics/example_latency"}
+      ],
+      "truth": {"node": "orders-db-link", "category": "network_degradation", "fixes": ["switch_db_route:orders"]},
+      "expect": "recover"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+18:03:41 started 5 runs: ['baseline'] x ['workflow_hang', 'catalog_price_drift', 'stock_not_decremented', 'flash_sale', 'payments_bad_config']
+18:04:01   0/5 baseline workflow_hang
+18:05:01   1/5 baseline catalog_price_drift
+18:06:21   2/5 baseline stock_not_decremented
+18:08:41   3/5 baseline flash_sale
+18:10:41   4/5 baseline payments_bad_config
+18:17:42   5/5 baseline payments_bad_config
+18:18:02 saved C:\Users\SL6\Desktop\Nabd\eval\results\ablation-20261030-1818.json and .md
+18:18:02 started 6 runs: ['nabd'] x ['silent_order_drop', 'queue_drop_under_load', 'workflow_hang', 'catalog_price_drift', 'stock_not_decremented', 'flash_sale']
+18:18:22   0/6 nabd silent_order_drop
+18:19:22   1/6 nabd queue_drop_under_load
+18:20:42   2/6 nabd workflow_hang
+18:23:02   3/6 nabd catalog_price_drift
+18:24:42   4/6 nabd stock_not_decremented
+18:26:22   5/6 nabd flash_sale
+18:30:02   6/6  
+18:30:02 saved C:\Users\SL6\Desktop\Nabd\eval\results\quick-20261030-1830.json and .md
+18:30:02 started 10 runs: ['nabd', 'baseline'] x ['blind']
+18:30:22   0/10 nabd blind_1
+18:33:03 started 6 runs: ['nabd'] x ['silent_order_drop', 'queue_drop_under_load', 'workflow_hang', 'catalog_price_drift', 'stock_not_decremented', 'flash_sale']
+18:33:23   0/6 nabd silent_order_drop
+18:35:03   1/6 nabd queue_drop_under_load
+18:36:23   2/6 nabd workflow_hang
+18:39:03   3/6 nabd catalog_price_drift
+18:40:03   4/6 nabd stock_not_decremented
+18:42:03   5/6 nabd flash_sale
+18:44:43   6/6 nabd flash_sale
+18:45:03 saved C:\Users\SL6\Desktop\Nabd\eval\results\quick-20261030-1845.json and .md
+18:45:03 started 10 runs: ['nabd', 'baseline'] x ['blind']
+18:45:23   0/10 nabd blind_1
+18:52:23   1/10 nabd blind_2
+18:58:33   2/10 nabd blind_3
+19:04:33   3/10 nabd blind_4
+19:05:53   4/10 nabd blind_5
+19:09:13   5/10 baseline blind_1
+19:10:13   6/10 baseline blind_2
+19:21:34   7/10 baseline blind_3
+19:26:54   8/10 baseline blind_4
+19:28:34   9/10 baseline blind_5
+19:39:14   10/10  
+19:39:14 saved C:\Users\SL6\Desktop\Nabd\eval\results\blind-20261030-1939.json and .md
+19:39:14 all done

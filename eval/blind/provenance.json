@@ -1,0 +1,12 @@
+{
+ "written_by": "deepseek-v4-pro",
+ "at": "2026-10-30T17:25:41+0300",
+ "asked": 7,
+ "kept": 5,
+ "rejected": {
+  "format": 1,
+  "safety": 1
+ },
+ "sha256": "82a0e4b1243ab20dd2cbc7deb8fa1bb644e245af732f1e11119114b7ba8171a3",
+ "read_by_nabd_authors": false
+}

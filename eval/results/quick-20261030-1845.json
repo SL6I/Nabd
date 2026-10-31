@@ -1,0 +1,267 @@
+{
+ "rows": [
+  {
+   "engine": "nabd",
+   "scenario": "silent_order_drop",
+   "run": 1,
+   "faults": [
+    "silent_order_drop"
+   ],
+   "group": "silent",
+   "detected": true,
+   "detect_s": 31.1,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 61.7,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "repairs": [
+    "replay_orphan_payments: 48 (13672 SAR)"
+   ],
+   "repaired_items": 48,
+   "handoffs": 0,
+   "books_balanced": true,
+   "money_left_sar": 0,
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0316",
+   "variant": "nabd"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "queue_drop_under_load",
+   "run": 1,
+   "faults": [
+    "queue_drop_under_load"
+   ],
+   "group": "silent",
+   "detected": true,
+   "detect_s": 11.6,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 44.4,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "repairs": [
+    "replay_lost_events: 209"
+   ],
+   "repaired_items": 209,
+   "handoffs": 0,
+   "books_balanced": true,
+   "money_left_sar": 0,
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0318",
+   "variant": "nabd"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "workflow_hang",
+   "run": 1,
+   "faults": [
+    "workflow_hang"
+   ],
+   "group": "silent",
+   "detected": true,
+   "detect_s": 38.0,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 56.1,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "repairs": [],
+   "repaired_items": 0,
+   "handoffs": 2,
+   "books_balanced": true,
+   "money_left_sar": 0,
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0319",
+   "variant": "nabd"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "catalog_price_drift",
+   "run": 1,
+   "faults": [
+    "catalog_price_drift"
+   ],
+   "group": "silent",
+   "detected": true,
+   "detect_s": 6.4,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 32.7,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "repairs": [
+    "restore_catalog_prices: 7"
+   ],
+   "repaired_items": 7,
+   "handoffs": 1,
+   "books_balanced": true,
+   "money_left_sar": 0,
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0320",
+   "variant": "nabd"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "stock_not_decremented",
+   "run": 1,
+   "faults": [
+    "stock_not_decremented"
+   ],
+   "group": "silent",
+   "detected": true,
+   "detect_s": 20.9,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 88.2,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "repairs": [],
+   "repaired_items": 0,
+   "handoffs": 1,
+   "books_balanced": true,
+   "money_left_sar": 0,
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0322",
+   "variant": "nabd"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "flash_sale",
+   "run": 1,
+   "faults": [
+    "flash_sale"
+   ],
+   "group": "benign",
+   "detected": true,
+   "rca_correct": false,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "false alarm (escalated)",
+   "mttr_s": null,
+   "detect_s": null,
+   "wrong_actions": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "actions": 0,
+   "gated": 0,
+   "route": "core",
+   "tokens": {},
+   "rounds": 0,
+   "incident": "INC-0323",
+   "wrong_detail": [],
+   "books_balanced": true,
+   "money_left_sar": 0,
+   "variant": "nabd"
+  }
+ ],
+ "summary": {
+  "nabd": {
+   "runs": 5,
+   "rca_accuracy": 1.0,
+   "recovery_rate": 1.0,
+   "outcome_rate": 1.0,
+   "gated_actions": 0,
+   "median_mttr_s": 56.1,
+   "median_detect_s": 20.9,
+   "wrong_actions": 0,
+   "books_balanced_rate": 1.0,
+   "money_left_sar": 0,
+   "repaired_items": 264,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "benign_runs": 1,
+   "false_alarms": 1
+  },
+  "nabd:silent": {
+   "runs": 5,
+   "rca_accuracy": 1.0,
+   "recovery_rate": 1.0,
+   "outcome_rate": 1.0,
+   "gated_actions": 0,
+   "median_mttr_s": 56.1,
+   "median_detect_s": 20.9,
+   "wrong_actions": 0,
+   "books_balanced_rate": 1.0,
+   "money_left_sar": 0,
+   "repaired_items": 264,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "benign_runs": 0,
+   "false_alarms": 0
+  },
+  "nabd:benign": {
+   "runs": 0,
+   "benign_runs": 1,
+   "false_alarms": 1
+  }
+ },
+ "finished_at": 1793375083.8905165,
+ "plan": 6
+}

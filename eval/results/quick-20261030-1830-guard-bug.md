@@ -1,0 +1,27 @@
+# Nabd evaluation: quick
+
+6 runs, finished 2026-10-30 18:29.
+Every run injects a real fault into the live store, lets the agent handle it end to end with approvals granted automatically, scores it against the ground truth, and resets.
+
+| | Nabd (full) |
+|---|---|
+| Correct outcome | 4 / 5 |
+| Root cause right | 5 / 5 |
+| Detected | 5 / 5 |
+| Median time to detect | 17 s |
+| Median time to recover | 52 s |
+| Wrong actions | 0 |
+| Books balanced at the end | 4 / 5 |
+| SAR left charged with no order | 0 |
+| False alarms on a benign flash sale | 0 / 1 |
+
+## Run by run
+
+| fault | Nabd (full) |
+|---|---|
+| silent_order_drop | ✓ 50 s |
+| queue_drop_under_load | ✓ 38 s |
+| workflow_hang | ✓ 54 s |
+| catalog_price_drift | ✗ (escalated) |
+| stock_not_decremented | ✓ 65 s |
+| flash_sale | ✓ (quiet) |

@@ -1,0 +1,58 @@
+groups:
+  - name: dukkan
+    rules:
+      - alert: ServiceDown
+        expr: up{job="dukkan"} == 0
+        for: 4s
+        labels: { severity: critical }
+        annotations:
+          summary: "{{ $labels.service }} is not answering metric scrapes"
+
+      - alert: HighErrorRate
+        expr: |
+          (sum by (service) (rate(http_requests_total{status=~"5.."}[15s]))
+            / sum by (service) (rate(http_requests_total[15s]))) > 0.05
+        for: 4s
+        labels: { severity: critical }
+        annotations:
+          summary: "{{ $labels.service }} 5xx ratio is {{ $value | humanizePercentage }}"
+
+      - alert: HighClientErrorRate
+        expr: |
+          (sum by (service) (rate(http_requests_total{service="gateway", status=~"4.."}[15s]))
+            / sum by (service) (rate(http_requests_total{service="gateway"}[15s]))) > 0.25
+        for: 4s
+        labels: { severity: warning }
+        annotations:
+          summary: "{{ $labels.service }} is rejecting {{ $value | humanizePercentage }} of requests with 4xx"
+
+      - alert: HighLatencyP95
+        expr: |
+          histogram_quantile(0.95, sum by (service, le) (rate(http_request_duration_seconds_bucket[15s]))) > 0.8
+        for: 4s
+        labels: { severity: warning }
+        annotations:
+          summary: "{{ $labels.service }} p95 latency is {{ $value | humanizeDuration }}"
+
+      - alert: DependencyErrors
+        expr: sum by (service, dependency) (rate(dependency_errors_total[15s])) > 0.1
+        for: 4s
+        labels: { severity: warning }
+        annotations:
+          summary: "{{ $labels.service }} is failing calls to {{ $labels.dependency }}"
+
+      - alert: CPUSaturation
+        expr: rate(process_cpu_seconds_total{job="dukkan"}[15s]) > 0.85
+        for: 4s
+        labels: { severity: warning }
+        annotations:
+          summary: "{{ $labels.service }} is using {{ $value | humanizePercentage }} of a CPU core"
+
+      - alert: MemoryExhaustionPredicted
+        expr: |
+          predict_linear(process_resident_memory_bytes{job="dukkan"}[40s], 180) > 300e6
+            and on (service) (time() - process_start_time_seconds{job="dukkan"}) > 60
+        for: 6s
+        labels: { severity: warning }
+        annotations:
+          summary: "{{ $labels.service }} memory will pass 300 MB within 3 minutes at the current rate"

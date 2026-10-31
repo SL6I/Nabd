@@ -1,0 +1,79 @@
+{
+ "rows": [
+  {
+   "engine": "nabd",
+   "scenario": "blind_3",
+   "run": 1,
+   "faults": [
+    "blind_3"
+   ],
+   "group": "blind",
+   "detected": true,
+   "detect_s": 8.6,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 0,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "repairs": [],
+   "repaired_items": 0,
+   "handoffs": 0,
+   "books_balanced": false,
+   "money_left_sar": 0,
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0366",
+   "variant": "nabd"
+  }
+ ],
+ "summary": {
+  "nabd": {
+   "runs": 1,
+   "rca_accuracy": 0.0,
+   "recovery_rate": 0.0,
+   "outcome_rate": 0.0,
+   "gated_actions": 0,
+   "median_mttr_s": null,
+   "median_detect_s": 8.6,
+   "wrong_actions": 0,
+   "books_balanced_rate": 0.0,
+   "money_left_sar": 0,
+   "repaired_items": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "benign_runs": 0,
+   "false_alarms": 0
+  },
+  "nabd:blind": {
+   "runs": 1,
+   "rca_accuracy": 0.0,
+   "recovery_rate": 0.0,
+   "outcome_rate": 0.0,
+   "gated_actions": 0,
+   "median_mttr_s": null,
+   "median_detect_s": 8.6,
+   "wrong_actions": 0,
+   "books_balanced_rate": 0.0,
+   "money_left_sar": 0,
+   "repaired_items": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0,
+   "benign_runs": 0,
+   "false_alarms": 0
+  }
+ },
+ "finished_at": 1793379846.0714452,
+ "plan": 1
+}

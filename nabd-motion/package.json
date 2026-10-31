@@ -1,0 +1,24 @@
+{
+  "name": "nabd-motion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Motion-graphics promo video for Nabd (نبض), built with Remotion.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts NabdPromo out/nabd-promo.mp4 --codec=h264 --crf=16",
+    "still": "remotion still src/index.ts NabdPromo out/still.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.539",
+    "@remotion/google-fonts": "^4.0.539",
+    "@remotion/paths": "^4.0.539",
+    "@remotion/transitions": "^4.0.539",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

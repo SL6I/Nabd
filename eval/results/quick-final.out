@@ -1,0 +1,37 @@
+quick: 6 runs started
+  0/6  nabd silent_order_drop
+  1/6  nabd queue_drop_under_load
+  2/6  nabd workflow_hang
+  3/6  nabd catalog_price_drift
+  4/6  nabd stock_not_decremented
+  5/6  nabd flash_sale
+  6/6  nabd flash_sale
+# Nabd evaluation: quick
+
+6 runs, finished 2026-10-31 03:38.
+Every run injects a real fault into the live store, lets the agent handle it end to end with approvals granted automatically, scores it against the ground truth, and resets.
+
+| | Nabd (full) |
+|---|---|
+| Correct outcome | 5 / 5 |
+| Root cause right | 5 / 5 |
+| Detected | 5 / 5 |
+| Median time to detect | 21 s |
+| Median time to recover | 55 s |
+| Wrong actions | 0 |
+| Books balanced at the end | 5 / 5 |
+| SAR left charged with no order | 0 |
+| False alarms on a benign flash sale | 0 / 1 |
+
+## Run by run
+
+| fault | Nabd (full) |
+|---|---|
+| silent_order_drop | ✓ 51 s |
+| queue_drop_under_load | ✓ 43 s |
+| workflow_hang | ✓ 65 s |
+| catalog_price_drift | ✓ 55 s |
+| stock_not_decremented | ✓ 69 s |
+| flash_sale | ✓ (quiet) |
+
+saved C:\Users\SL6\Desktop\Nabd\eval\results\quick-20261031-0339.json and .md

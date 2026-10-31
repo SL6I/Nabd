@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+eval/.venv/
+eval/cloud-opsbench/
+eval/runs/
+# eval/blind/faults.json is published after its blind run (see provenance.json); ignore a new one until it has run
+# eval/blind/faults.json
+eval/rcaeval/data/

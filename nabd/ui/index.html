@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nabd War Room</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23123F33'/%3E%3Cpath d='M6 22h7l3-9 5 15 4-11 2 5h7' fill='none' stroke='%23F2F3EF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Nabd">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <rect width="40" height="40" rx="11"/>
+      <path class="mark-line" d="M6 22h7l3-9 5 15 4-11 2 5h7"/>
+    </svg>
+    <span class="brand-ar" lang="ar">نبض</span>
+    <span class="brand-en">Nabd</span>
+  </a>
+  <nav class="tabs" aria-label="Views">
+    <button class="tab active" data-view="war">War room</button>
+    <button class="tab" data-view="tel">Telemetry</button>
+    <button class="tab" data-view="pm">Postmortems</button>
+    <button class="tab" data-view="bench">Benchmark</button>
+    <button class="tab" data-view="mem">Memory</button>
+  </nav>
+  <div class="controls">
+    <div id="status" class="status ok" role="status">
+      <span class="status-dot"></span><span id="status-text">Connecting…</span><span id="status-clock" class="num"></span>
+    </div>
+    <div class="pop-wrap">
+      <button id="break-toggle" class="btn btn-danger" aria-expanded="false" aria-controls="break-menu">Break the store</button>
+      <div id="break-menu" class="popover break-menu" hidden>
+        <div class="pop-head">
+          <div><b>Break the store</b><span class="hint">Nabd sees only what an engineer would.</span></div>
+          <button id="btn-reset" class="btn btn-ghost btn-small">Reset all</button>
+        </div>
+        <div id="fault-grid" class="fault-grid"></div>
+        <div class="chaos-hero">
+          <button id="btn-mystery" class="btn btn-danger btn-big" title="Inject one to three hidden faults; Nabd is not told which">Break something hidden</button>
+          <button id="btn-storm" class="btn btn-storm btn-big" title="Three unrelated faults at once, plus a harmless deploy as a red herring">Perfect storm</button>
+        </div>
+        <details class="more">
+          <summary>Multi-fault scenarios and held-out faults</summary>
+          <div class="chaos-foot">
+            <select id="scenario-select" aria-label="Multi-fault scenario"></select>
+            <button id="btn-scenario" class="btn">Run</button>
+          </div>
+          <div id="held-grid"></div>
+        </details>
+      </div>
+    </div>
+    <div class="pop-wrap">
+      <button id="settings-toggle" class="icon-btn" aria-expanded="false" aria-controls="settings-menu" title="Settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.4 7.4 0 0 0-1.7-1L15 3.5h-4L10.6 6a7.4 7.4 0 0 0-1.7 1l-2.4-1-2 3.4L4.6 11a7.6 7.6 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.4 7.4 0 0 0 1.7 1l.4 2.5h4l.4-2.5a7.4 7.4 0 0 0 1.7-1l2.4 1 2-3.4ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg>
+      </button>
+      <div id="settings-menu" class="popover settings-menu" hidden>
+        <div class="set-row"><span>Brain</span><span id="engine-chip" class="chip"></span></div>
+        <label class="set-row"><span>Engine</span>
+          <select id="engine-select">
+            <option value="auto">Auto: route each incident</option>
+            <option value="core">Core engine only</option>
+            <option value="claude">LLM for every incident</option>
+          </select>
+        </label>
+        <label class="set-row"><span>Hand-written books</span><input id="sw-business" type="checkbox"></label>
+        <label class="set-row"><span>Laws it learned itself</span><input id="sw-learned" type="checkbox"></label>
+        <button id="btn-relearn" class="btn btn-small" title="Forget the learned laws and learn them again from the next four minutes of healthy traffic">Learn the laws again</button>
+        <div class="set-row"><span>Autonomy</span>
+          <div class="segmented" id="mode-toggle" role="group" aria-label="Autonomy">
+            <button data-mode="autopilot">Autopilot</button>
+            <button data-mode="supervised">Supervised</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="view-war" class="view war">
+    <section id="hero" class="hero ok" aria-live="polite">
+      <div class="hero-main">
+        <p id="hero-kicker" class="hero-kicker">Dukkan, live</p>
+        <h1 id="hero-title">Dukkan is healthy</h1>
+        <p id="hero-sub" class="hero-sub">Payments, orders, the queue, shipping and prices all agree.</p>
+        <div class="hero-compare">
+          <div class="cmp"><span class="cmp-k">Monitoring sees</span><span class="cmp-v"><b id="mz-classic" class="num">0</b> alerts</span></div>
+          <div class="cmp"><span class="cmp-k">Mizan sees</span><span class="cmp-v"><b id="mz-broken" class="num">0</b> broken books</span></div>
+        </div>
+      </div>
+      <div class="hero-ledger">
+        <p class="ledger-k"><span lang="ar">ميزان</span> The books, checked every 3 seconds</p>
+        <ol id="mz-list" class="ledger"></ol>
+      </div>
+    </section>
+
+    <div class="panel topo-panel">
+      <div class="panel-head">
+        <h2>The store</h2>
+        <div class="legend"><span class="lg ok">healthy</span><span class="lg warn">slow</span><span class="lg crit">failing</span><span class="lg down">down</span></div>
+      </div>
+      <svg id="topo" viewBox="0 0 650 440" role="img" aria-label="Service dependency map with live health"></svg>
+    </div>
+
+    <div class="panel agent-panel">
+      <div class="panel-head"><h2>What Nabd is doing</h2></div>
+      <ol id="stepper" class="stepper"></ol>
+      <div id="incident-head" class="incident-head"></div>
+      <div id="feed" class="feed" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="view-tel" class="view tel" hidden>
+    <div class="panel"><div class="panel-head"><h2>Gateway</h2></div><div id="kpis" class="kpis"></div></div>
+    <div class="panel"><div class="panel-head"><h2>Services</h2></div><div id="svc-list" class="svc-list"></div></div>
+    <div class="panel"><div class="panel-head"><h2>Infrastructure</h2></div><div id="infra" class="infra"></div></div>
+    <div class="panel"><div class="panel-head"><h2>Firing alerts</h2><span id="alert-count" class="hint"></span></div><ul id="alerts" class="alerts"></ul></div>
+    <div class="panel"><div class="panel-head"><h2>Payments memory</h2><span id="mem-forecast" class="hint"></span></div><canvas id="mem-chart" height="140"></canvas></div>
+    <div class="panel"><div class="panel-head"><h2>Logs the LLM never had to read</h2></div><div id="logstats" class="logstats"></div></div>
+  </section>
+
+  <section id="view-pm" class="view docs" hidden>
+    <aside class="panel pm-list"><div class="panel-head"><h2>Postmortems</h2></div><ul id="pm-list"></ul></aside>
+    <article class="panel pm-detail">
+      <div class="pm-toolbar">
+        <div class="segmented" id="pm-lang"><button data-lang="en" class="active">English</button><button data-lang="ar">العربية</button></div>
+        <a id="pm-download" class="btn btn-ghost" href="#" download>Download .md</a>
+      </div>
+      <div id="pm-body" class="md"><p class="empty">Postmortems appear here the moment an incident closes.</p></div>
+    </article>
+  </section>
+
+  <section id="view-bench" class="view bench" hidden>
+    <div class="panel bench-setup">
+      <div class="panel-head"><h2>Benchmark</h2><span class="hint">Real faults, real recovery, scored against ground truth</span></div>
+      <div id="bench-scenarios" class="bench-scenarios"></div>
+      <div class="bench-controls">
+        <label>Runs per scenario <input id="bench-runs" type="number" min="1" max="5" value="1"></label>
+        <label class="check"><input id="bench-baseline" type="checkbox" checked> Compare with the restart-everything runbook</label>
+        <button id="bench-start" class="btn btn-primary">Start benchmark</button>
+        <button id="bench-stop" class="btn btn-ghost">Stop</button>
+      </div>
+      <div class="bench-progress"><div id="bench-bar"></div></div>
+      <p id="bench-status" class="hint"></p>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Results</h2></div>
+      <div id="bench-summary" class="bench-summary"></div>
+      <div class="table-wrap"><table id="bench-table" class="table"></table></div>
+    </div>
+  </section>
+
+  <section id="view-mem" class="view memv" hidden>
+    <div class="panel">
+      <div class="panel-head"><h2>Incident memory</h2><button id="mem-clear" class="btn btn-ghost">Forget everything</button></div>
+      <p class="hint">Every verified recovery is stored with a fingerprint of its signals. A new incident that looks like an old one is fixed the same way, with zero tokens.</p>
+      <div id="mem-list" class="mem-list"></div>
+    </div>
+  </section>
+</main>
+
+<div id="approval" class="approval" hidden>
+  <div class="approval-card" role="dialog" aria-modal="true" aria-labelledby="approval-title">
+    <div class="approval-top">
+      <span class="ring-icon" aria-hidden="true"></span>
+      <div>
+        <div class="eyebrow">Nabd needs your approval for <span id="approval-incident"></span></div>
+        <h3 id="approval-title"></h3>
+      </div>
+    </div>
+    <div id="approval-body" class="approval-body"></div>
+    <div class="approval-actions">
+      <button id="approval-reject" class="btn btn-ghost">Reject</button>
+      <button id="approval-approve" class="btn btn-primary">Approve</button>
+    </div>
+  </div>
+</div>
+
+<script src="/ui/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+{
+ "drawn_at": "2026-10-30T06:20:03+00:00",
+ "seed": 2026,
+ "per_category": 5,
+ "rule": "random.Random(seed).sample per category, categories in sorted order",
+ "cases": [
+  {
+   "system": "boutique",
+   "category": "admission",
+   "case": "8"
+  },
+  {
+   "system": "boutique",
+   "category": "admission",
+   "case": "21"
+  },
+  {
+   "system": "boutique",
+   "category": "admission",
+   "case": "33"
+  },
+  {
+   "system": "boutique",
+   "category": "admission",
+   "case": "42"
+  },
+  {
+   "system": "boutique",
+   "category": "admission",
+   "case": "56"
+  },
+  {
+   "system": "boutique",
+   "category": "codedefect",
+   "case": "14"
+  },
+  {
+   "system": "boutique",
+   "category": "codedefect",
+   "case": "29"
+  },
+  {
+   "system": "boutique",
+   "category": "codedefect",
+   "case": "72"
+  },
+  {
+   "system": "boutique",
+   "category": "codedefect",
+   "case": "77"
+  },
+  {
+   "system": "boutique",
+   "category": "codedefect",
+   "case": "80"
+  },
+  {
+   "system": "boutique",
+   "category": "infrastructure",
+   "case": "27"
+  },
+  {
+   "system": "boutique",
+   "category": "infrastructure",
+   "case": "32"
+  },
+  {
+   "system": "boutique",
+   "category": "infrastructure",
+   "case": "36"
+  },
+  {
+   "system": "boutique",
+   "category": "infrastructure",
+   "case": "37"
+  },
+  {
+   "system": "boutique",
+   "category": "infrastructure",
+   "case": "38"
+  },
+  {
+   "system": "boutique",
+   "category": "performance",
+   "case": "1"
+  },
+  {
+   "system": "boutique",
+   "category": "performance",
+   "case": "3"
+  },
+  {
+   "system": "boutique",
+   "category": "performance",
+   "case": "8"
+  },
+  {
+   "system": "boutique",
+   "category": "performance",
+   "case": "15"
+  },
+  {
+   "system": "boutique",
+   "category": "performance",
+   "case": "20"
+  },
+  {
+   "system": "boutique",
+   "category": "runtime",
+   "case": "1"
+  },
+  {
+   "system": "boutique",
+   "category": "runtime",
+   "case": "7"
+  },
+  {
+   "system": "boutique",
+   "category": "runtime",
+   "case": "8"
+  },
+  {
+   "system": "boutique",
+   "category": "runtime",
+   "case": "19"
+  },
+  {
+   "system": "boutique",
+   "category": "runtime",
+   "case": "29"
+  },
+  {
+   "system": "boutique",
+   "category": "scheduling",
+   "case": "54"
+  },
+  {
+   "system": "boutique",
+   "category": "scheduling",
+   "case": "65"
+  },
+  {
+   "system": "boutique",
+   "category": "scheduling",
+   "case": "81"
+  },
+  {
+   "system": "boutique",
+   "category": "scheduling",
+   "case": "102"
+  },
+  {
+   "system": "boutique",
+   "category": "scheduling",
+   "case": "126"
+  },
+  {
+   "system": "boutique",
+   "category": "service",
+   "case": "23"
+  },
+  {
+   "system": "boutique",
+   "category": "service",
+   "case": "25"
+  },
+  {
+   "system": "boutique",
+   "category": "service",
+   "case": "33"
+  },
+  {
+   "system": "boutique",
+   "category": "service",
+   "case": "48"
+  },
+  {
+   "system": "boutique",
+   "category": "service",
+   "case": "52"
+  },
+  {
+   "system": "boutique",
+   "category": "startup",
+   "case": "5"
+  },
+  {
+   "system": "boutique",
+   "category": "startup",
+   "case": "6"
+  },
+  {
+   "system": "boutique",
+   "category": "startup",
+   "case": "22"
+  },
+  {
+   "system": "boutique",
+   "category": "startup",
+   "case": "41"
+  },
+  {
+   "system": "boutique",
+   "category": "startup",
+   "case": "47"
+  }
+ ]
+}

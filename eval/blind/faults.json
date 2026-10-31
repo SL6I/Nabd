@@ -1,0 +1,143 @@
+{
+ "faults": [
+  {
+   "note": "Silent data loss: a database trigger silently discards inserts into orders, so requests still succeed but no order row is written.",
+   "inject": [
+    {
+     "type": "sql",
+     "sql": "CREATE OR REPLACE FUNCTION discard_order_insert() RETURNS trigger AS $$ BEGIN RETURN NULL; END $$ LANGUAGE plpgsql; CREATE TRIGGER trg_discard_order_insert BEFORE INSERT ON orders FOR EACH ROW EXECUTE FUNCTION discard_order_insert();"
+    }
+   ],
+   "undo": [
+    {
+     "type": "sql",
+     "sql": "DROP TRIGGER IF EXISTS trg_discard_order_insert ON orders; DROP FUNCTION IF EXISTS discard_order_insert();"
+    }
+   ],
+   "truth": {
+    "node": "orders",
+    "category": "silent_data_loss",
+    "fixes": []
+   },
+   "expect": "escalate"
+  },
+  {
+   "note": "Silent corruption: a trigger silently changes the total_sar on new orders to 1.00, corrupting financial records while all requests succeed.",
+   "inject": [
+    {
+     "type": "sql",
+     "sql": "CREATE OR REPLACE FUNCTION corrupt_order_total() RETURNS trigger AS $$ BEGIN NEW.total_sar := 1.00; RETURN NEW; END $$ LANGUAGE plpgsql; CREATE TRIGGER trg_corrupt_order_total BEFORE INSERT ON orders FOR EACH ROW EXECUTE FUNCTION corrupt_order_total();"
+    }
+   ],
+   "undo": [
+    {
+     "type": "sql",
+     "sql": "DROP TRIGGER IF EXISTS trg_corrupt_order_total ON orders; DROP FUNCTION IF EXISTS corrupt_order_total();"
+    }
+   ],
+   "truth": {
+    "node": "orders",
+    "category": "corrupted_data",
+    "fixes": []
+   },
+   "expect": "escalate"
+  },
+  {
+   "note": "Silent duplication plus stuck message: a queue event is repeatedly copied back to the queue without its processing state being cleared, causing duplicate shipping and a stuck fulfillment worker.",
+   "inject": [
+    {
+     "type": "redis",
+     "command": [
+      "RPUSH",
+      "q:order-events",
+      "{\"order_ref\":\"blind-dup-0001\",\"payment_id\":\"pay-blind-dup-0001\"}"
+     ]
+    }
+   ],
+   "undo": [
+    {
+     "type": "redis",
+     "command": [
+      "LREM",
+      "q:order-events",
+      "0",
+      "{\"order_ref\":\"blind-dup-0001\",\"payment_id\":\"pay-blind-dup-0001\"}"
+     ]
+    }
+   ],
+   "truth": {
+    "node": "fulfillment",
+    "category": "poison_message",
+    "fixes": [
+     "quarantine_stuck_message:fulfillment"
+    ]
+   },
+   "expect": "recover"
+  },
+  {
+   "note": "Escalate-only fault: the external supplier catalog endpoint is blocked by a firewall rule, so catalog-sync and price checks fail, but nothing inside the store can fix it.",
+   "inject": [
+    {
+     "type": "toxic",
+     "proxy": "orders_db_primary",
+     "toxic": {
+      "name": "supplier_block",
+      "type": "timeout",
+      "stream": "upstream",
+      "toxicity": 1.0,
+      "attributes": {
+       "timeout": 30000
+      }
+     }
+    }
+   ],
+   "undo": [
+    {
+     "type": "http",
+     "method": "DELETE",
+     "url": "http://toxiproxy:8474/proxies/orders_db_primary/toxics/supplier_block"
+    }
+   ],
+   "truth": {
+    "node": "supplier",
+    "category": "dependency_failure",
+    "fixes": []
+   },
+   "expect": "escalate"
+  },
+  {
+   "note": "Looks like inventory but is really catalog-sync: a config change makes catalog-sync write prices to a wrong table, so product prices stop updating while inventory appears healthy.",
+   "inject": [
+    {
+     "type": "config",
+     "service": "catalog-sync",
+     "changes": {
+      "target_table": "products_backup"
+     },
+     "author": "ci-bot",
+     "message": "switch price sync to backup table",
+     "minutes_ago": 1
+    }
+   ],
+   "undo": [
+    {
+     "type": "config",
+     "service": "catalog-sync",
+     "changes": {
+      "target_table": "products"
+     },
+     "author": "ci-bot",
+     "message": "restore price sync target table"
+    }
+   ],
+   "truth": {
+    "node": "catalog-sync",
+    "category": "bad_config_deploy",
+    "fixes": [
+     "rollback_config:catalog-sync"
+    ]
+   },
+   "expect": "recover"
+  }
+ ]
+}

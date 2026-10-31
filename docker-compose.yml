@@ -1,0 +1,123 @@
+name: nabd
+
+x-store: &store
+  build: ./store
+  image: nabd-store:latest
+  restart: "no"
+  volumes:
+    - nabd-config:/config:ro
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_started
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dukkan
+    command: ["postgres", "-c", "max_connections=40", "-c", "superuser_reserved_connections=5"]
+    volumes:
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dukkan"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--maxmemory", "48mb", "--maxmemory-policy", "noeviction", "--save", "", "--appendonly", "no"]
+    restart: "no"
+
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy:2.9.0
+    command: ["-host=0.0.0.0", "-config=/config/toxiproxy.json"]
+    volumes:
+      - ./infra/toxiproxy/toxiproxy.json:/config/toxiproxy.json:ro
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.53.3
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.retention.time=6h"]
+    volumes:
+      - ./infra/prometheus:/etc/prometheus:ro
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  gateway:
+    <<: *store
+    environment: { SERVICE: gateway }
+    ports:
+      - "8080:8000"
+
+  auth:
+    <<: *store
+    environment: { SERVICE: auth }
+
+  inventory:
+    <<: *store
+    environment: { SERVICE: inventory }
+
+  orders:
+    <<: *store
+    environment: { SERVICE: orders }
+    depends_on:
+      postgres:
+        condition: service_healthy
+      toxiproxy:
+        condition: service_started
+
+  payments:
+    <<: *store
+    environment: { SERVICE: payments }
+    mem_limit: 320m
+    memswap_limit: 320m
+
+  psp:
+    <<: *store
+    environment: { SERVICE: psp }
+
+  fulfillment:
+    <<: *store
+    environment: { SERVICE: fulfillment }
+
+  catalog-sync:
+    <<: *store
+    environment: { SERVICE: catalog-sync }
+
+  traffic:
+    <<: *store
+    environment: { SERVICE: traffic }
+    depends_on:
+      gateway:
+        condition: service_started
+
+  nabd:
+    build: ./nabd
+    image: nabd-agent:latest
+    ports:
+      - "7000:7000"
+    environment:
+      NABD_LLM_API_KEY: ${NABD_LLM_API_KEY:-}
+      NABD_LLM_BASE_URL: ${NABD_LLM_BASE_URL:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      NABD_MODEL: ${NABD_MODEL:-claude-opus-5-5}
+      NABD_EFFORT: ${NABD_EFFORT:-medium}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - nabd-config:/config
+      - nabd-data:/data
+      - ./eval/blind:/blind:ro
+    depends_on:
+      - prometheus
+      - gateway
+    restart: unless-stopped
+
+volumes:
+  nabd-config:
+  nabd-data:

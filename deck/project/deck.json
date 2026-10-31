@@ -1,0 +1,18 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-10-30T18:05:00+03:00"},
+  "lists": "css",
+  "title": "Nabd · نبض",
+  "cover": "cover",
+  "order": ["cover", "problem", "brief", "dukkan", "loop", "mizan", "learns", "safety", "evidence", "close"],
+  "sections": {
+    "s1": {"description": "The problem: failures that never raise an alert", "start": "cover"},
+    "s2": {"description": "How Nabd works: the store, the loop, Mizan, the learned laws and the safety rails", "start": "dukkan"},
+    "s3": {"description": "The evidence, and how to run it", "start": "evidence"}
+  },
+  "faces": {
+    "alexandria": {"family": "Alexandria", "href": "https://fonts.googleapis.com/css2?family=Alexandria:wght@300..800&display=swap"},
+    "jetbrains-mono": {"family": "JetBrains Mono", "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"}
+  },
+  "designSystems": []
+}
