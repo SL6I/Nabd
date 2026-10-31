@@ -1034,7 +1034,6 @@ async function init() {
   $("#approval-approve").onclick = () => decide("approve", "button");
   $("#approval-reject").onclick = () => decide("reject", "button");
   for (const tab of $$(".tab")) tab.onclick = () => showView(tab.dataset.view);
-  for (const b of $$("#pm-lang button")) b.onclick = () => { S.pmLang = b.dataset.lang; renderPm(); };
   $("#bench-start").onclick = startBenchmark;
   $("#bench-stop").onclick = () => api("/api/benchmark/stop", {});
   $("#mem-clear").onclick = () => api("/api/memory/clear", {}).then(loadMemory);
@@ -1107,7 +1106,6 @@ async function openPostmortem(id, switchView = true) {
 }
 
 function renderPm() {
-  for (const b of $$("#pm-lang button")) b.classList.toggle("active", b.dataset.lang === S.pmLang);
   const body = $("#pm-body");
   const pm = S.pmCurrent;
   if (!pm) return;
