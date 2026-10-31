@@ -149,7 +149,7 @@ def heartbeats(t0, t1, period, amp):
 
 # Scene lengths in frames, as in NabdPromoShort (nabd-motion/src/Video.tsx): intro, Dukkan (cut before its
 # storm), problem, Mizan, learned laws, safety, benchmark, outro. Each transition overlaps 18 frames.
-SCENES, FPS, TR = [180, 170, 250, 370, 390, 310, 290, 220], 30, 18
+SCENES, FPS, TR = [201, 174, 308, 378, 328, 290, 363, 200], 30, 18
 S = [sum(SCENES[:i]) / FPS - i * TR / FPS for i in range(len(SCENES))]
 PROMO = (sum(SCENES) - TR * (len(SCENES) - 1)) / FPS
 S.append(PROMO)

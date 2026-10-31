@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import {
   linearTiming,
   springTiming,
@@ -35,13 +35,19 @@ const FULL: Scene[] = [
   {C: OutroScene, d: 220},
 ];
 
-// The ~70-second cut for a 3-minute submission. Dukkan comes right after the intro and ends before its
-// perfect storm, so only the store and its map are shown. The live demo shows the loop for real, so that
-// scene is left out.
+// The ~70-second cut for a 3-minute submission. Each scene lasts as long as its voice-over line, so the
+// narration and the picture change together. Dukkan ends before its perfect storm, so only the store and
+// its map are shown; Safety runs past its "approved" beat (frame 252). The live demo shows the loop for
+// real, so that scene is left out.
 const SHORT: Scene[] = [
-  FULL[0],
-  {C: DukkanScene, d: STORM - 20},
-  ...FULL.filter((s) => s.C !== IntroScene && s.C !== DukkanScene && s.C !== LoopScene),
+  {C: IntroScene, d: 201},
+  {C: DukkanScene, d: STORM - 16},
+  {C: ProblemScene, d: 308},
+  {C: MizanScene, d: 378},
+  {C: LearnsScene, d: 328},
+  {C: SafetyScene, d: 290},
+  {C: BenchmarkScene, d: 363},
+  {C: OutroScene, d: 200},
 ];
 
 const TR = 18;
@@ -61,7 +67,20 @@ const frames = (scenes: Scene[]) => scenes.reduce((a, s) => a + s.d, 0) - TR * (
 export const TOTAL_FRAMES = frames(FULL);
 export const SHORT_FRAMES = frames(SHORT);
 
-const Promo: React.FC<{scenes: Scene[]}> = ({scenes}) => (
+// A thin line along the bottom edge that fills as the promo plays.
+const Progress: React.FC = () => {
+  const frame = useCurrentFrame();
+  const {durationInFrames} = useVideoConfig();
+  return (
+    <AbsoluteFill style={{justifyContent: 'flex-end'}}>
+      <div style={{height: 6, background: C.line}}>
+        <div style={{height: 6, width: `${(frame / (durationInFrames - 1)) * 100}%`, background: C.accent}} />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+const Promo: React.FC<{scenes: Scene[]; progress?: boolean}> = ({scenes, progress}) => (
   <AbsoluteFill style={{background: C.ink}}>
     <TransitionSeries>
       {scenes.map((s, i) => (
@@ -75,8 +94,9 @@ const Promo: React.FC<{scenes: Scene[]}> = ({scenes}) => (
         </React.Fragment>
       ))}
     </TransitionSeries>
+    {progress && <Progress />}
   </AbsoluteFill>
 );
 
 export const NabdPromo: React.FC = () => <Promo scenes={FULL} />;
-export const NabdPromoShort: React.FC = () => <Promo scenes={SHORT} />;
+export const NabdPromoShort: React.FC = () => <Promo scenes={SHORT} progress />;
