@@ -8,6 +8,10 @@
 </p>
 
 <p align="center">
+  <b><a href="https://youtu.be/mZ7XbvMfmvQ">▶ Watch the 3-minute demo</a></b>
+</p>
+
+<p align="center">
   <a href="#run-it">Run it</a> ·
   <a href="#try-it">Try it</a> ·
   <a href="#results">Results</a> ·
