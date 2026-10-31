@@ -357,10 +357,10 @@ export const DukkanScene: React.FC = () => {
           <Kicker>Meet Dukkan · دكّان</Kicker>
           <div style={{height: 18}} />
           <Headline
-            text="A live Saudi store. Real shoppers, real money."
+            text="A live Saudi test store. Simulated shoppers."
             delay={10}
             size={68}
-            highlight={{money: C.gold}}
+            highlight={{Simulated: C.gold}}
           />
         </div>
         {frame >= STORM - 6 && (
