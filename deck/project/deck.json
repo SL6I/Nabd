@@ -4,11 +4,11 @@
   "lists": "css",
   "title": "Nabd · نبض",
   "cover": "cover",
-  "order": ["cover", "problem", "brief", "dukkan", "loop", "mizan", "learns", "safety", "evidence", "close"],
+  "order": ["cover", "problem", "mizan", "example", "dukkan", "learns", "safety", "brief", "evidence", "close"],
   "sections": {
-    "s1": {"description": "The problem: failures that never raise an alert", "start": "cover"},
-    "s2": {"description": "How Nabd works: the store, the loop, Mizan, the learned laws and the safety rails", "start": "dukkan"},
-    "s3": {"description": "The evidence, and how to run it", "start": "evidence"}
+    "s1": {"description": "The problem, the idea, and one incident step by step", "start": "cover"},
+    "s2": {"description": "Where it runs, what it learns by itself, and the safety rails", "start": "dukkan"},
+    "s3": {"description": "The challenge brief, the evidence, and how to run it", "start": "brief"}
   },
   "faces": {
     "alexandria": {"family": "Alexandria", "href": "https://fonts.googleapis.com/css2?family=Alexandria:wght@300..800&display=swap"},
