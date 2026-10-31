@@ -1,0 +1,1321 @@
+{
+ "rows": [
+  {
+   "engine": "nabd",
+   "scenario": "redis_oom",
+   "run": 1,
+   "faults": [
+    "redis_oom"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 11.1,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 43.7,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0096"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "payments_bad_config",
+   "run": 1,
+   "faults": [
+    "payments_bad_config"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 9.7,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 41.8,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0097"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "orders_db_latency",
+   "run": 1,
+   "faults": [
+    "orders_db_latency"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 16.2,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 59.2,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0098"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "auth_crash",
+   "run": 1,
+   "faults": [
+    "auth_crash"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 8.8,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 41.8,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0099"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "inventory_cpu_hog",
+   "run": 1,
+   "faults": [
+    "inventory_cpu_hog"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 17.0,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 55.8,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0100"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "payments_memory_leak",
+   "run": 1,
+   "faults": [
+    "payments_memory_leak"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 27.5,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 62.1,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0101"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "db_conn_exhaustion",
+   "run": 1,
+   "faults": [
+    "db_conn_exhaustion"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 14.0,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 42.7,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0102"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "db_lock",
+   "run": 1,
+   "faults": [
+    "db_lock"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 12.3,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 44.2,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0103"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "perfect_storm",
+   "run": 1,
+   "faults": [
+    "redis_oom",
+    "payments_bad_config",
+    "orders_db_latency"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 10.9,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 58.0,
+   "actions": 3,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0104"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "auth_and_lock",
+   "run": 1,
+   "faults": [
+    "auth_crash",
+    "db_lock"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 9.0,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 89.1,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0105"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "leak_and_config",
+   "run": 1,
+   "faults": [
+    "payments_memory_leak",
+    "payments_bad_config"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 11.3,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 135.4,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0106"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "db_double",
+   "run": 1,
+   "faults": [
+    "db_conn_exhaustion",
+    "inventory_cpu_hog"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 11.8,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 47.0,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0107"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "cache_and_crash",
+   "run": 1,
+   "faults": [
+    "redis_oom",
+    "auth_crash"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 10.2,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 44.0,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0108"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "config_and_latency",
+   "run": 1,
+   "faults": [
+    "payments_bad_config",
+    "orders_db_latency"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 11.7,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 57.9,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0109"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "lock_and_leak",
+   "run": 1,
+   "faults": [
+    "db_lock",
+    "payments_memory_leak"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 14.2,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 137.0,
+   "actions": 2,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0110"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "auth_session_ttl",
+   "run": 1,
+   "faults": [
+    "auth_session_ttl"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 18.8,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 0,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0111"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "inventory_cache_host",
+   "run": 1,
+   "faults": [
+    "inventory_cache_host"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 11.2,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 0,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0113"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "psp_outage",
+   "run": 1,
+   "faults": [
+    "psp_outage"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 11.7,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": true,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 0,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0115"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "redis_crash",
+   "run": 1,
+   "faults": [
+    "redis_crash"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 18.2,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 0,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "core",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 2,
+   "incident": "INC-0117"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "redis_oom",
+   "run": 1,
+   "faults": [
+    "redis_oom"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 14.3,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0119"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "payments_bad_config",
+   "run": 1,
+   "faults": [
+    "payments_bad_config"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 12.4,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart payments",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0121"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "orders_db_latency",
+   "run": 1,
+   "faults": [
+    "orders_db_latency"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 17.0,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart orders",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0123"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "auth_crash",
+   "run": 1,
+   "faults": [
+    "auth_crash"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 9.6,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 42.6,
+   "actions": 2,
+   "wrong_actions": 1,
+   "wrong_detail": [
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0125"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "inventory_cpu_hog",
+   "run": 1,
+   "faults": [
+    "inventory_cpu_hog"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 15.9,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 51.5,
+   "actions": 2,
+   "wrong_actions": 1,
+   "wrong_detail": [
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0126"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "payments_memory_leak",
+   "run": 1,
+   "faults": [
+    "payments_memory_leak"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 34.9,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 71.8,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0128"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "db_conn_exhaustion",
+   "run": 1,
+   "faults": [
+    "db_conn_exhaustion"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 24.0,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0130"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "db_lock",
+   "run": 1,
+   "faults": [
+    "db_lock"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 14.2,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0132"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "perfect_storm",
+   "run": 1,
+   "faults": [
+    "redis_oom",
+    "payments_bad_config",
+    "orders_db_latency"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 12.6,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 3,
+   "wrong_actions": 3,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart payments",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0134"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "auth_and_lock",
+   "run": 1,
+   "faults": [
+    "auth_crash",
+    "db_lock"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 8.6,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 1,
+   "wrong_detail": [
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0136"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "leak_and_config",
+   "run": 1,
+   "faults": [
+    "payments_memory_leak",
+    "payments_bad_config"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 10.8,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 1,
+   "wrong_detail": [
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0138"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "db_double",
+   "run": 1,
+   "faults": [
+    "db_conn_exhaustion",
+    "inventory_cpu_hog"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 11.5,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 3,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart orders",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0140"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "cache_and_crash",
+   "run": 1,
+   "faults": [
+    "redis_oom",
+    "auth_crash"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 8.2,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0142"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "config_and_latency",
+   "run": 1,
+   "faults": [
+    "payments_bad_config",
+    "orders_db_latency"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 10.1,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart payments",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0143"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "lock_and_leak",
+   "run": 1,
+   "faults": [
+    "db_lock",
+    "payments_memory_leak"
+   ],
+   "group": "known",
+   "detected": true,
+   "detect_s": 12.6,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0145"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "auth_session_ttl",
+   "run": 1,
+   "faults": [
+    "auth_session_ttl"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 17.7,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 1,
+   "wrong_actions": 1,
+   "wrong_detail": [
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0147"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "inventory_cache_host",
+   "run": 1,
+   "faults": [
+    "inventory_cache_host"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 10.2,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0149"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "psp_outage",
+   "run": 1,
+   "faults": [
+    "psp_outage"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 10.7,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 1,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart payments",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0151"
+  },
+  {
+   "engine": "baseline",
+   "scenario": "redis_crash",
+   "run": 1,
+   "faults": [
+    "redis_crash"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 19.2,
+   "rca_correct": false,
+   "rca_fraction": 0.0,
+   "recovered": false,
+   "outcome_ok": false,
+   "status": "escalated",
+   "gated": 0,
+   "mttr_s": null,
+   "actions": 2,
+   "wrong_actions": 2,
+   "wrong_detail": [
+    "Restart inventory",
+    "Restart gateway"
+   ],
+   "route": "baseline",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0153"
+  }
+ ],
+ "summary": {
+  "baseline": {
+   "runs": 19,
+   "rca_accuracy": 0.0,
+   "recovery_rate": 0.158,
+   "outcome_rate": 0.158,
+   "gated_actions": 1,
+   "median_mttr_s": 51.5,
+   "median_detect_s": 12.6,
+   "wrong_actions": 30,
+   "cost_usd": 0.0,
+   "llm_calls": 0
+  },
+  "baseline:known": {
+   "runs": 15,
+   "rca_accuracy": 0.0,
+   "recovery_rate": 0.2,
+   "outcome_rate": 0.2,
+   "gated_actions": 0,
+   "median_mttr_s": 51.5,
+   "median_detect_s": 12.6,
+   "wrong_actions": 23,
+   "cost_usd": 0.0,
+   "llm_calls": 0
+  },
+  "baseline:held_out": {
+   "runs": 4,
+   "rca_accuracy": 0.0,
+   "recovery_rate": 0.0,
+   "outcome_rate": 0.0,
+   "gated_actions": 1,
+   "median_mttr_s": null,
+   "median_detect_s": 14.2,
+   "wrong_actions": 7,
+   "cost_usd": 0.0,
+   "llm_calls": 0
+  },
+  "nabd": {
+   "runs": 19,
+   "rca_accuracy": 0.789,
+   "recovery_rate": 0.789,
+   "outcome_rate": 0.842,
+   "gated_actions": 0,
+   "median_mttr_s": 55.8,
+   "median_detect_s": 11.7,
+   "wrong_actions": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0
+  },
+  "nabd:known": {
+   "runs": 15,
+   "rca_accuracy": 1.0,
+   "recovery_rate": 1.0,
+   "outcome_rate": 1.0,
+   "gated_actions": 0,
+   "median_mttr_s": 55.8,
+   "median_detect_s": 11.7,
+   "wrong_actions": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0
+  },
+  "nabd:held_out": {
+   "runs": 4,
+   "rca_accuracy": 0.0,
+   "recovery_rate": 0.0,
+   "outcome_rate": 0.25,
+   "gated_actions": 0,
+   "median_mttr_s": null,
+   "median_detect_s": 14.9,
+   "wrong_actions": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 0
+  }
+ },
+ "finished_at": 1793323280.8641303,
+ "plan": 38
+}

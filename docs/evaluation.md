@@ -20,7 +20,7 @@ The Benchmark tab in the War Room runs every fault and scenario for real. It inj
 
 ### With Mizan, before the learned laws
 
-24 runs: the 8 known single faults and the 4 silent faults, once each, for Nabd's core engine (0 LLM calls) and for the runbook. This run came before the learned laws were added; the [ablation](#ablation-which-part-catches-what) and the final check below ran on the current version. Mizan's repairs (rebuilding orders, refunding charges, replaying events, restoring prices) are scored as repairs, not as actions. Their dry run refuses to touch anything the books do not prove broken.
+24 runs: the 8 known single faults and the 4 silent faults, once each, for Nabd's core engine (0 LLM calls) and for the runbook. This run came before the learned laws were added; the [ablation](#ablation-which-part-catches-what) and the final check below ran on the current version. Mizan's repairs (rebuilding orders, refunding charges, replaying events, restoring prices) are scored as repairs, not as actions. Their dry run refuses to touch anything the books do not prove broken. Raw results: [benchmark-mizan-core-24runs.json](../eval/results/benchmark-mizan-core-24runs.json).
 
 | | Nabd | Restart runbook |
 |---|---|---|
@@ -84,7 +84,7 @@ The final check, after the rehearsal fixes ([quick-20261031-0339.md](../eval/res
 
 ## Before Mizan
 
-Results of the previous version: 38 runs, one per scenario per engine. The run started with an empty incident memory and used the core engine only, since no API key was set.
+Results of the previous version: 38 runs, one per scenario per engine. The run started with an empty incident memory and used the core engine only, since no API key was set. Raw results: [benchmark-core-38runs.json](../eval/results/benchmark-core-38runs.json).
 
 Known faults (8 single faults and 7 multi-fault scenarios):
 
@@ -107,7 +107,7 @@ Held-out faults (4 faults with no signature, core engine only):
 
 On faults it knows, Nabd fixed everything. On faults it did not know, and without an LLM, it fixed nothing, but it also broke nothing and handed the person the right suspect.
 
-Held-out faults with the LLM path (DeepSeek V4 Pro through its Anthropic-compatible API, empty memory):
+Held-out faults with the LLM path (DeepSeek V4 Pro through its Anthropic-compatible API, empty memory; raw results: [benchmark-deepseek-heldout-v2.json](../eval/results/benchmark-deepseek-heldout-v2.json), and the earlier run described below: [v1](../eval/results/benchmark-deepseek-heldout-v1.json)):
 
 | Held-out fault | Root cause | Outcome | Time to outcome | Wrong actions |
 |---|---|---|---|---|

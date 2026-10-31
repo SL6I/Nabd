@@ -1,0 +1,151 @@
+{
+ "rows": [
+  {
+   "engine": "nabd",
+   "scenario": "auth_session_ttl",
+   "run": 1,
+   "faults": [
+    "auth_session_ttl"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 19.7,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 42.4,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "memory",
+   "llm_calls": 0,
+   "tokens": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0156"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "inventory_cache_host",
+   "run": 1,
+   "faults": [
+    "inventory_cache_host"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 10.1,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 236.6,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "claude",
+   "llm_calls": 12,
+   "tokens": {
+    "input": 13244,
+    "output": 15838,
+    "cache_read": 76032
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0157"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "psp_outage",
+   "run": 1,
+   "faults": [
+    "psp_outage"
+   ],
+   "group": "held_out",
+   "detected": false,
+   "rca_correct": false,
+   "recovered": false,
+   "outcome_ok": false,
+   "mttr_s": null,
+   "detect_s": null,
+   "wrong_actions": 0,
+   "cost_usd": 0,
+   "llm_calls": 0,
+   "actions": 0,
+   "gated": 0,
+   "route": null,
+   "tokens": {},
+   "rounds": 0,
+   "incident": null,
+   "wrong_detail": [],
+   "status": "missed"
+  },
+  {
+   "engine": "nabd",
+   "scenario": "redis_crash",
+   "run": 1,
+   "faults": [
+    "redis_crash"
+   ],
+   "group": "held_out",
+   "detected": true,
+   "detect_s": 16.1,
+   "rca_correct": true,
+   "rca_fraction": 1.0,
+   "recovered": true,
+   "outcome_ok": true,
+   "status": "resolved",
+   "gated": 0,
+   "mttr_s": 430.3,
+   "actions": 1,
+   "wrong_actions": 0,
+   "wrong_detail": [],
+   "route": "claude",
+   "llm_calls": 22,
+   "tokens": {
+    "input": 15764,
+    "output": 26408,
+    "cache_read": 231424
+   },
+   "cost_usd": 0.0,
+   "rounds": 1,
+   "incident": "INC-0160"
+  }
+ ],
+ "summary": {
+  "nabd": {
+   "runs": 4,
+   "rca_accuracy": 0.75,
+   "recovery_rate": 0.75,
+   "outcome_rate": 0.75,
+   "gated_actions": 0,
+   "median_mttr_s": 236.6,
+   "median_detect_s": 16.1,
+   "wrong_actions": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 34
+  },
+  "nabd:held_out": {
+   "runs": 4,
+   "rca_accuracy": 0.75,
+   "recovery_rate": 0.75,
+   "outcome_rate": 0.75,
+   "gated_actions": 0,
+   "median_mttr_s": 236.6,
+   "median_detect_s": 16.1,
+   "wrong_actions": 0,
+   "cost_usd": 0.0,
+   "llm_calls": 34
+  }
+ },
+ "finished_at": 1793326965.7860746,
+ "plan": 4
+}
